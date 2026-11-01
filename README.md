@@ -16,13 +16,17 @@ A lightweight Rust utlity that inspects system boot entries using `efibootmgr`, 
 - ['efibootmgr'](https://github.com/rhboot/efibootmgr)
 - **Rust**
 
-## Usage
-1. Clone the repo
-2. Ensure you have root permissions to read UEFI variables
-3. Build and run the project using Cargo:
-```bash
-cargo run --release
-```
+## Building & Installation
+
+Available Makefile targets:
+
+- `make build`: Compiles the binary into the `dist/` directory.
+
+- `make install`: Copies the binary to `~/.local/bin`.
+
+- `make all`: Runs both build and install steps.
+
+- `make clean`: Removes the `dist/` build directory.
 
 ## License
 This project is licensed under the MIT License. See the [License](LICENSE) file for details.

@@ -1,5 +1,5 @@
 BINARY_NAME = nvramhof
-INSTALL_DIR = /usr/local/bin
+INSTALL_DIR=$(HOME)/.local/bin
 
 .PHONY: all build run clean install
 
