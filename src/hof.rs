@@ -50,6 +50,9 @@ pub fn gen_nfo_f(entries: &[CleanBootEntry], current_id: &str) -> std::io::Resul
     nfo.push_str(
         " ┼──────────────────────────────────────────────────────────────────────────────────┼\n",
     );
+    nfo.push_str(
+        " ┼──────────────────────────────────────────────────────────────────────────────────┼\n",
+    );
     nfo.push_str("                        -- NVRAM Hall Of Fame --\n\n");
 
     nfo.push_str(" [i] HW Report:\n");
@@ -85,12 +88,14 @@ pub fn gen_nfo_f(entries: &[CleanBootEntry], current_id: &str) -> std::io::Resul
         };
 
         nfo.push_str(&format!(
-            "     │ {}Boot{} ▒ {:.<25} ▒ [ {} ] │\n",
+            "     │ {}Boot{} ▒ {:.<25} ▒ [ {} ] \n",
             prefix, entry.id, entry.name, status
         ));
     }
     nfo.push_str("     └────────────────────────────────────────────────────────┘\n\n");
-    nfo.push_str(" ┼────────────────────────────────────────────────────────────┼\n");
+    nfo.push_str(
+        " ┼──────────────────────────────────────────────────────────────────────────────────┼\n",
+    );
 
     let mut file = File::create("nvram_hof.nfo")?;
     file.write_all(nfo.as_bytes())?;
